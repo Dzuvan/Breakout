@@ -90,7 +90,6 @@ impl BallHandler for Ball {
 
     fn handle_ball(&mut self, paddle: &Paddle) {
         self.handle_move();
-        println!("{}",self.check_ball_collision(paddle));
         if self.check_ball_collision(paddle) {
             let paddle_center = paddle.screen_location.x + paddle.screen_location.w / 2;
             let ball_center =  self.screen_location.x + self.screen_location.w / 2;
