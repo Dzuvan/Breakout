@@ -105,7 +105,7 @@ fn init_blocks() -> Vec<Block> {
                 blocks.push(block);
         }
     }
-
+    let mut num_blocks  = 55;
     for (i, n) in numbers.into_iter().enumerate() {
         if n==1 {
             blocks[i].num_hits = 1;
@@ -124,6 +124,13 @@ fn init_blocks() -> Vec<Block> {
             blocks[i].bitmap_location.x = BLUE_X;
             blocks[i].bitmap_location.y = BLUE_Y;
         }
+        // if n==0 {
+        //     blocks[i] = blocks[num_blocks-1];
+        //     num_blocks -=1;
+        //     if num_blocks == 0 {
+        //         break;
+        //     }
+        // }
     }
     blocks
 }

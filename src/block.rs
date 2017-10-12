@@ -8,7 +8,7 @@ use sdl2::surface::Surface;
 use constants::*;
 use ball::*;
 
-#[derive(Debug)]
+#[derive(Debug, Copy, Clone)]
 pub struct Block {
     pub screen_location: Rect,
     pub bitmap_location: Rect,
@@ -102,8 +102,5 @@ impl Handler for Block {
 
     fn handle_block_collision(&mut self) {
         self.num_hits -= 1;
-        if self.num_hits == 0 {
-            return;
-        }
     }
 }
